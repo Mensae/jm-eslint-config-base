@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`eslint-config-formatting should match the snapshot 1`] = `
+{
+  "env": {
+    "es2022": true,
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+  },
+  "plugins": [
+    "import",
+    "unicorn",
+    "jsdoc",
+  ],
+  "reportUnusedDisableDirectives": true,
+  "rules": {
+    "import/exports-last": "error",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+    ],
+    "import/first": "error",
+    "import/max-dependencies": "error",
+    "import/newline-after-import": [
+      "error",
+      {
+        "considerComments": true,
+      },
+    ],
+    "import/no-anonymous-default-export": [
+      "error",
+      {
+        "allowCallExpression": false,
+      },
+    ],
+    "import/no-duplicates": [
+      "error",
+      {
+        "considerQueryString": true,
+        "prefer-inline": true,
+      },
+    ],
+    "import/no-named-default": "error",
+    "import/no-namespace": "error",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc",
+        },
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          [
+            "sibling",
+            "parent",
+          ],
+          "index",
+          "unknown",
+        ],
+        "newlines-between": "always",
+      },
+    ],
+    "import/prefer-default-export": "error",
+    "jsdoc/check-indentation": "off",
+    "jsdoc/check-line-alignment": "off",
+    "jsdoc/multiline-blocks": "warn",
+    "jsdoc/no-multi-asterisks": "warn",
+    "jsdoc/require-asterisk-prefix": "off",
+    "jsdoc/require-hyphen-before-param-description": "off",
+    "jsdoc/sort-tags": "off",
+    "jsdoc/tag-lines": "warn",
+    "sort-imports": [
+      "error",
+      {
+        "allowSeparatedGroups": true,
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": [
+          "none",
+          "all",
+          "multiple",
+          "single",
+        ],
+      },
+    ],
+    "spaced-comment": [
+      "off",
+      "always",
+      {
+        "block": {
+          "balanced": true,
+        },
+      },
+    ],
+    "unicorn/consistent-function-scoping": "error",
+    "unicorn/escape-case": "error",
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "camelCase": true,
+          "kebabCase": true,
+          "pascalCase": true,
+        },
+      },
+    ],
+    "unicorn/no-console-spaces": "error",
+    "unicorn/numeric-separators-style": "error",
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "allowList": {
+          "Props": true,
+          "args": true,
+          "ctx": true,
+          "props": true,
+          "req": true,
+          "res": true,
+        },
+        "checkShorthandProperties": true,
+        "ignore": [
+          "\\.e2e$",
+          "\\.e2e-spec$",
+        ],
+      },
+    ],
+    "unicorn/switch-case-braces": "error",
+    "unicorn/template-indent": "error",
+    "unicorn/text-encoding-identifier-case": "error",
+  },
+}
+`;
