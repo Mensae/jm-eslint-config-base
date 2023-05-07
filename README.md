@@ -9,7 +9,7 @@ rules that are conflicting with [prettier](https://prettier.io).
 ## Available configs
 
 - `base`, The, default, base configuration that does not include any rules with regard to styling
-- `formatting`, Extention to the `base` config that does include styling rules but only those that are not covered by [prettier](https://prettier.io).
+- `base-formatting`, Extention to the `base` config that does include styling rules but only those that are not covered by [prettier](https://prettier.io).
 
 ## Installation
 
@@ -28,10 +28,10 @@ Example `.eslintrc.json` with only the base config
 }
 ```
 
-Example `.eslintrc.json` with base config exntended with formatting rules
+Example `.eslintrc.json` with base config extended with formatting rules
 
 ```json
 {
-  "extends": ["@jm/base", "@jm/formatting"]
+  "extends": ["@jm/base", "@jm/eslint-config-base/formatting"]
 }
 ```
