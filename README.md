@@ -28,10 +28,10 @@ Example `.eslintrc.json` with only the base config
 }
 ```
 
-Example `.eslintrc.json` with base config exntended with formatting rules
+Example `.eslintrc.json` with base config extended with formatting rules
 
 ```json
 {
-  "extends": ["@jm/base", "@jm/formatting"]
+  "extends": ["@jm/base", "@jm/eslint-config-base/formatting"]
 }
 ```
