@@ -9,7 +9,7 @@ rules that are conflicting with [prettier](https://prettier.io).
 ## Available configs
 
 - `base`, The, default, base configuration that does not include any rules with regard to styling
-- `base-formatting`, Extention to the `base` config that does include styling rules but only those that are not covered by [prettier](https://prettier.io).
+- `formatting`, Extention to the `base` config that does include styling rules but only those that are not covered by [prettier](https://prettier.io).
 
 ## Installation
 
