@@ -7,7 +7,6 @@
 /* eslint-env node */
 
 const OFF = 'off';
-const WARN = 'warn';
 const ERROR = 'error';
 
 module.exports = Object.freeze({
@@ -275,13 +274,13 @@ module.exports = Object.freeze({
      * Reports invalid padding inside JSDoc blocks.
      * https://github.com/gajus/eslint-plugin-jsdoc#check-indentation
      */
-    'jsdoc/check-indentation': OFF,
+    'jsdoc/check-indentation': ERROR,
 
     /*
      * Reports invalid alignment of JSDoc block lines.
      * https://github.com/gajus/eslint-plugin-jsdoc#check-line-alignment
      */
-    'jsdoc/check-line-alignment': OFF,
+    'jsdoc/check-line-alignment': ERROR,
 
     /*
      * Controls how and whether jsdoc blocks can be expressed as single or
@@ -289,20 +288,20 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc#multiline-blocks
      * Recommended: true
      */
-    'jsdoc/multiline-blocks': WARN,
+    'jsdoc/multiline-blocks': ERROR,
 
     /*
      * Prevents use of multiple asterisks at the beginning of lines.
      * https://github.com/gajus/eslint-plugin-jsdoc#no-multi-asterisks
      * Recommended: true
      */
-    'jsdoc/no-multi-asterisks': WARN,
+    'jsdoc/no-multi-asterisks': ERROR,
 
     /*
      * Requires that each JSDoc line starts with an `*`.
      * https://github.com/gajus/eslint-plugin-jsdoc#require-asterisk-prefix
      */
-    'jsdoc/require-asterisk-prefix': OFF,
+    'jsdoc/require-asterisk-prefix': ERROR,
 
     /*
      * Requires (or disallows) a hyphen before the `@param` description.
@@ -321,7 +320,7 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-tag-lines
      * Recommended: true
      */
-    'jsdoc/tag-lines': WARN
+    'jsdoc/tag-lines': ERROR
 
     // #endregion jsdoc
 

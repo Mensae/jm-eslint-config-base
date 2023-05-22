@@ -1551,7 +1551,6 @@ module.exports = Object.freeze({
      * Enforce specifying rules to disable in `eslint-disable` comments.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-abusive-eslint-disable.md
      * Recommended: Yes
-     * Used by Mozilla
      */
     'unicorn/no-abusive-eslint-disable': ERROR,
 
@@ -1580,7 +1579,6 @@ module.exports = Object.freeze({
      * Enforce combining multiple `Array#push()` into one call.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-push-push.md
      * Recommended: Yes
-     * Used by Mozilla
      */
     'unicorn/no-array-push-push': ERROR,
 
@@ -1616,7 +1614,6 @@ module.exports = Object.freeze({
      * Require `Array.isArray()` instead of `instanceof Array`.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-instanceof-array.md
      * Recommended: Yes
-     * Used by Mozilla
      */
     'unicorn/no-instanceof-array': ERROR,
 
@@ -1693,7 +1690,6 @@ module.exports = Object.freeze({
      * Disallow comparing `undefined` using `typeof`.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-typeof-undefined.md
      * Recommended: Yes
-     * Used by Mozilla
      */
     'unicorn/no-typeof-undefined': ERROR,
 
@@ -1786,7 +1782,6 @@ module.exports = Object.freeze({
      * `.filter(…)`.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-find.md
      * Recommended: Yes
-     * Used by Mozilla
      */
     'unicorn/prefer-array-find': ['error', { checkFromLast: true }],
 
@@ -1802,7 +1797,6 @@ module.exports = Object.freeze({
      * Prefer `.flatMap(…)` over `.map(…).flat()`.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat-map.md
      * Recommended: Yes
-     * Used by Mozilla
      */
     'unicorn/prefer-array-flat-map': ERROR,
 
@@ -1811,7 +1805,6 @@ module.exports = Object.freeze({
      * `Array#{findIndex,findLastIndex}()` when looking for the index of an item.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-index-of.md
      * Recommended: Yes
-     * Used by Mozilla
      */
     'unicorn/prefer-array-index-of': ERROR,
 
@@ -1825,7 +1818,6 @@ module.exports = Object.freeze({
     /*
      * Prefer `.at()` method for index access and `String#charAt()`.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-at.md
-     * Used by Mozilla
      */
     'unicorn/prefer-at': OFF,
 
@@ -1841,7 +1833,6 @@ module.exports = Object.freeze({
      * Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-date-now.md
      * Recommended: Yes
-     * Used by Mozilla
      */
     'unicorn/prefer-date-now': ERROR,
 
@@ -1871,7 +1862,6 @@ module.exports = Object.freeze({
      * Prefer using a logical operator over a ternary.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-logical-operator-over-ternary.md
      * Recommended: Yes
-     * Used by Mozilla
      */
     'unicorn/prefer-logical-operator-over-ternary': ERROR,
 
@@ -2107,21 +2097,21 @@ module.exports = Object.freeze({
     /*
      * Checks that `@access` tags use one of the following values:
      * "package", "private", "protected", "public".
-     * https://github.com/gajus/eslint-plugin-jsdoc#check-access
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-access.md
      * Recommended: true
      */
-    'jsdoc/check-access': WARN,
+    'jsdoc/check-access': ERROR,
 
     /*
      * Reports invalid alignment of JSDoc block asterisks.
-     * https://github.com/gajus/eslint-plugin-jsdoc#check-alignment
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-alignment.md
      * Recommended: true
      */
-    'jsdoc/check-alignment': WARN,
+    'jsdoc/check-alignment': ERROR,
 
     /*
      * Ensures that (JavaScript) examples within JSDoc adhere to ESLint rules.
-     * https://github.com/gajus/eslint-plugin-jsdoc#check-examples
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-examples.md
      */
     // TODO: This rule currently does not work in ESLint 8 (we are waiting for [issue 14745](https://github.com/eslint/eslint/issues/14745)).
     'jsdoc/check-examples': OFF,
@@ -2129,73 +2119,73 @@ module.exports = Object.freeze({
     /*
      * Ensures that parameter names in JSDoc are matched by corresponding items
      * in the function declaration.
-     * https://github.com/gajus/eslint-plugin-jsdoc#check-param-names
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-param-names.md
      * Recommended: true
      */
-    'jsdoc/check-param-names': WARN,
+    'jsdoc/check-param-names': ERROR,
 
     /*
      * Ensures that property names in JSDoc are not duplicated on the same block
      * and that nested properties have defined roots.
-     * https://github.com/gajus/eslint-plugin-jsdoc#check-property-names
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-property-names.md
      * Recommended: true
      */
-    'jsdoc/check-property-names': WARN,
+    'jsdoc/check-property-names': ERROR,
 
     /*
      * Reports against syntax not encouraged for the mode (e.g., Google Closure
      * Compiler in "jsdoc" or "typescript" mode).
      * Note that this rule will not check for types that are wholly invalid for
      * a given mode, as that is covered by valid-types.
-     * https://github.com/gajus/eslint-plugin-jsdoc#check-syntax
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-syntax.md
      */
     'jsdoc/check-syntax': OFF,
 
     /*
      * Reports invalid block tag names.
      * See also: https://jsdoc.app/#block-tags
-     * https://github.com/gajus/eslint-plugin-jsdoc#check-tag-names
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-tag-names.md
      * Recommended: true
      */
-    'jsdoc/check-tag-names': WARN,
+    'jsdoc/check-tag-names': ERROR,
 
     /*
      * Reports invalid types.
-     * https://github.com/gajus/eslint-plugin-jsdoc#check-types
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-types.md
      * Recommended: true
      */
-    'jsdoc/check-types': WARN,
+    'jsdoc/check-types': ERROR,
 
     /*
      * This rule checks the values for a handful of tags
-     * https://github.com/gajus/eslint-plugin-jsdoc#check-values
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-values.md
      * Recommended: true
      */
-    'jsdoc/check-values': WARN,
+    'jsdoc/check-values': ERROR,
 
     /*
      * Expects tags that supposed to be empty of any content.
-     * https://github.com/gajus/eslint-plugin-jsdoc#empty-tags
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/empty-tags.md
      * Recommended: true
      */
     'jsdoc/empty-tags': WARN,
 
     /*
      * Reports an issue with any non-constructor function using `@implements`.
-     * https://github.com/gajus/eslint-plugin-jsdoc#implements-on-classes
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/implements-on-classes.md
      * Recommended: true
      */
-    'jsdoc/implements-on-classes': WARN,
+    'jsdoc/implements-on-classes': ERROR,
 
     /*
      * Reports on JSDoc texts that serve only to restart their attached name.
-     * https://github.com/gajus/eslint-plugin-jsdoc#informative-docs
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/informative-docs.md
      */
     'jsdoc/informative-docs': OFF,
 
     /*
      * Enforces a regular expression pattern on descriptions.
-     * https://github.com/gajus/eslint-plugin-jsdoc#match-description
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/match-description.md
      */
     'jsdoc/match-description': OFF,
 
@@ -2205,66 +2195,66 @@ module.exports = Object.freeze({
      * two asterisks, but which appear to be intended as JSDoc blocks due to the
      * presence of whitespace followed by whitespace or asterisks, and an
      * at-sign (`@`) and some non-whitespace (as with a JSDoc block tag).
-     * https://github.com/gajus/eslint-plugin-jsdoc#no-bad-blocks
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/no-bad-blocks.md
      */
-    'jsdoc/no-bad-blocks': WARN,
+    'jsdoc/no-bad-blocks': ERROR,
 
     /*
      * If tags are present, this rule will prevent empty lines in the block
      * description.
-     * https://github.com/gajus/eslint-plugin-jsdoc#no-blank-block-descriptions
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/no-blank-block-descriptions.md
      */
     'jsdoc/no-blank-block-descriptions': OFF,
 
     /*
      * This rule reports defaults being used on the relevant portion of `@param`
      * or `@default`.
-     * https://github.com/gajus/eslint-plugin-jsdoc#no-defaults
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/no-defaults.md
      */
     'jsdoc/no-defaults': OFF,
 
     /*
      * This rule lets you report if certain always expected comment structures
      * are missing.
-     * https://github.com/gajus/eslint-plugin-jsdoc#no-missing-syntax
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/no-missing-syntax.md
      */
     'jsdoc/no-missing-syntax': OFF,
 
     /*
      * Reports when certain comment structures are present.
-     * https://github.com/gajus/eslint-plugin-jsdoc#no-restricted-syntax
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/no-restricted-syntax.md
      */
     'jsdoc/no-restricted-syntax': OFF,
 
     /*
      * This rule reports types being used on `@param` or `@returns`.
-     * https://github.com/gajus/eslint-plugin-jsdoc#no-types
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/no-types.md
      */
     'jsdoc/no-types': OFF,
 
     /*
      * Checks that types in JSDoc comments are defined.
-     * https://github.com/gajus/eslint-plugin-jsdoc#no-undefined-types
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/no-undefined-types.md
      * Recommended: true
      */
-    'jsdoc/no-undefined-types': WARN,
+    'jsdoc/no-undefined-types': ERROR,
 
     /*
      * Requires that all functions have a description.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-description
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-description.md
      */
     'jsdoc/require-description': OFF,
 
     /*
      * Requires that block description, explicit `@description`, and
      * `@param`/`@returns` tag descriptions are written in complete sentences.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-description-complete-sentence
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-description-complete-sentence.md
      */
     'jsdoc/require-description-complete-sentence': OFF,
 
     /*
      * Requires that all functions have examples.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-example
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-example.md
      */
     'jsdoc/require-example': OFF,
 
@@ -2273,133 +2263,133 @@ module.exports = Object.freeze({
      * 1. All files have a `@file`, `@fileoverview`, or `@overview` tag.
      * 2. Duplicate file overview tags within a given file will be reported.
      * 3. File overview tags will be reported which are not, as per the docs.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-file-overview
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-file-overview.md
      */
     'jsdoc/require-file-overview': OFF,
 
     /*
      * Checks for presence of JSDoc comments, on class declarations as well as
      * functions.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-jsdoc
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-jsdoc.md
      * Recommended: true
      */
-    'jsdoc/require-jsdoc': WARN,
+    'jsdoc/require-jsdoc': ERROR,
 
     /*
      * Requires that all function parameters are documented.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-param
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-param.md
      * Recommended: true
      */
-    'jsdoc/require-param': WARN,
+    'jsdoc/require-param': ERROR,
 
     /*
      * Requires that each `@param` tag has a description value.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-param-description
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-param-description.md
      * Recommended: true
      */
     'jsdoc/require-param-description': WARN,
 
     /*
      * Requires that all function parameters have names.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-param-name
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-param-name.md
      * Recommended: true
      */
-    'jsdoc/require-param-name': WARN,
+    'jsdoc/require-param-name': ERROR,
 
     /*
      * Requires that each `@param` tag has a `type` value.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-param-type
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-param-type.md
      * Recommended: true
      */
-    'jsdoc/require-param-type': WARN,
+    'jsdoc/require-param-type': ERROR,
 
     /*
      * Requires that all `@typedef` and `@namespace` tags have `@property` when
      * their type is a plain `object`, `Object`, or `PlainObject`.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-property
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-property.md
      * Recommended: true
      */
-    'jsdoc/require-property': WARN,
+    'jsdoc/require-property': ERROR,
 
     /*
      * Requires that each `@property` tag has a description value.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-property-description
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-property-description.md
      * Recommended: true
      */
     'jsdoc/require-property-description': WARN,
 
     /*
      * Requires that all function `@property` tags have names.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-property-name
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-property-name.md
      * Recommended: true
      */
-    'jsdoc/require-property-name': WARN,
+    'jsdoc/require-property-name': ERROR,
 
     /*
      * Requires that each `@property` tag has a type value.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-property-type
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-property-type.md
      * Recommended: true
      */
-    'jsdoc/require-property-type': WARN,
+    'jsdoc/require-property-type': ERROR,
 
     /*
      * Requires that returns are documented.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-returns
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-returns.md
      * Recommended: true
      */
-    'jsdoc/require-returns': WARN,
+    'jsdoc/require-returns': ERROR,
 
     /*
      * Requires a return statement (or non-`undefined` Promise resolve value) in
      * function bodies if a `@returns` tag (without a void or undefined type) is
      * specified in the function's JSDoc comment.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-returns-check
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-returns-check.md
      * Recommended: true
      */
-    'jsdoc/require-returns-check': WARN,
+    'jsdoc/require-returns-check': ERROR,
 
     /*
      * Requires that the `@returns` tag has a description value.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-returns-description
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-returns-description.md
      * Recommended: true
      */
     'jsdoc/require-returns-description': WARN,
 
     /*
      * Requires that `@returns` tag has type value.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-returns-type
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-returns-type.md
      * Recommended: true
      */
-    'jsdoc/require-returns-type': WARN,
+    'jsdoc/require-returns-type': ERROR,
 
     /*
      * Requires that throw statements are documented.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-throws
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-throws.md
      */
     'jsdoc/require-throws': OFF,
 
     /*
      * Requires that yields are documented.
-     * https://github.com/gajus/eslint-plugin-jsdoc#require-yields
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-yields.md
      * Recommended: true
      */
-    'jsdoc/require-yields': WARN,
+    'jsdoc/require-yields': ERROR,
 
     /*
      * Requires a yield statement in function body if a `@yields` tag is
      * specified in JSDoc comment.
-     * https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-require-yields-check
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-yields-check.md
      * Recommended: true
      */
-    'jsdoc/require-yields-check': WARN,
+    'jsdoc/require-yields-check': ERROR,
 
     /*
      * Requires all types to be valid JSDoc or Closure compiler types without
      * syntax errors.
-     * https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-valid-types
+     * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/valid-types.md
      * Recommended: true
      */
-    'jsdoc/valid-types': WARN
+    'jsdoc/valid-types': ERROR
 
     // #endregion jsdoc
 

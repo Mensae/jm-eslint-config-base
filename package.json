@@ -4,7 +4,9 @@
   "description": "A basic ESLint config which point out only problems and enforcing best practices",
   "exports": {
     ".": "./configs/base.js",
+    "./base-relaxed": "./configs/base-relaxed.js",
     "./formatting": "./configs/formatting.js",
+    "./formatting-relaxed": "./configs/formatting-relaxed.js",
     "./package.json": "./package.json"
   },
   "scripts": {

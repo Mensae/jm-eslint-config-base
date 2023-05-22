@@ -345,43 +345,43 @@ exports[`base config plus formatting 1`] = `
       "error",
     ],
     "jsdoc/check-access": [
-      "warn",
+      "error",
     ],
     "jsdoc/check-alignment": [
-      "warn",
+      "error",
     ],
     "jsdoc/check-examples": [
       "off",
     ],
     "jsdoc/check-indentation": [
-      "off",
+      "error",
     ],
     "jsdoc/check-line-alignment": [
-      "off",
+      "error",
     ],
     "jsdoc/check-param-names": [
-      "warn",
+      "error",
     ],
     "jsdoc/check-property-names": [
-      "warn",
+      "error",
     ],
     "jsdoc/check-syntax": [
       "off",
     ],
     "jsdoc/check-tag-names": [
-      "warn",
+      "error",
     ],
     "jsdoc/check-types": [
-      "warn",
+      "error",
     ],
     "jsdoc/check-values": [
-      "warn",
+      "error",
     ],
     "jsdoc/empty-tags": [
       "warn",
     ],
     "jsdoc/implements-on-classes": [
-      "warn",
+      "error",
     ],
     "jsdoc/informative-docs": [
       "off",
@@ -390,10 +390,10 @@ exports[`base config plus formatting 1`] = `
       "off",
     ],
     "jsdoc/multiline-blocks": [
-      "warn",
+      "error",
     ],
     "jsdoc/no-bad-blocks": [
-      "warn",
+      "error",
     ],
     "jsdoc/no-blank-block-descriptions": [
       "off",
@@ -405,7 +405,7 @@ exports[`base config plus formatting 1`] = `
       "off",
     ],
     "jsdoc/no-multi-asterisks": [
-      "warn",
+      "error",
     ],
     "jsdoc/no-restricted-syntax": [
       "off",
@@ -414,10 +414,10 @@ exports[`base config plus formatting 1`] = `
       "off",
     ],
     "jsdoc/no-undefined-types": [
-      "warn",
+      "error",
     ],
     "jsdoc/require-asterisk-prefix": [
-      "off",
+      "error",
     ],
     "jsdoc/require-description": [
       "off",
@@ -435,61 +435,61 @@ exports[`base config plus formatting 1`] = `
       "off",
     ],
     "jsdoc/require-jsdoc": [
-      "warn",
+      "error",
     ],
     "jsdoc/require-param": [
-      "warn",
+      "error",
     ],
     "jsdoc/require-param-description": [
       "warn",
     ],
     "jsdoc/require-param-name": [
-      "warn",
+      "error",
     ],
     "jsdoc/require-param-type": [
-      "warn",
+      "error",
     ],
     "jsdoc/require-property": [
-      "warn",
+      "error",
     ],
     "jsdoc/require-property-description": [
       "warn",
     ],
     "jsdoc/require-property-name": [
-      "warn",
+      "error",
     ],
     "jsdoc/require-property-type": [
-      "warn",
+      "error",
     ],
     "jsdoc/require-returns": [
-      "warn",
+      "error",
     ],
     "jsdoc/require-returns-check": [
-      "warn",
+      "error",
     ],
     "jsdoc/require-returns-description": [
       "warn",
     ],
     "jsdoc/require-returns-type": [
-      "warn",
+      "error",
     ],
     "jsdoc/require-throws": [
       "off",
     ],
     "jsdoc/require-yields": [
-      "warn",
+      "error",
     ],
     "jsdoc/require-yields-check": [
-      "warn",
+      "error",
     ],
     "jsdoc/sort-tags": [
       "off",
     ],
     "jsdoc/tag-lines": [
-      "warn",
+      "error",
     ],
     "jsdoc/valid-types": [
-      "warn",
+      "error",
     ],
     "new-cap": [
       "error",
