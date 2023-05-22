@@ -10,6 +10,8 @@ rules that are conflicting with [prettier](https://prettier.io).
 
 - `base`, The, default, base configuration that does not include any rules with regard to styling
 - `formatting`, Extention to the `base` config that does include styling rules but only those that are not covered by [prettier](https://prettier.io).
+- `base-relaxed`, Base configuration with some relaxed rules. Better suitable for personal or small projects.
+- `formatting-relaxed`, Extention to the `base-relaxed` configuration.
 
 ## Installation
 
