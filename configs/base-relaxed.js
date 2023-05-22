@@ -404,7 +404,7 @@ module.exports = Object.freeze({
 
     /*
      * Disallow unreachable statements after a return, throw, continue, or break
-	 * statement.
+     * statement.
      * https://eslint.org/docs/rules/no-unreachable
      * Type: problem
      * Recommended: Yes
@@ -436,7 +436,7 @@ module.exports = Object.freeze({
 
     /*
      * Disallow use of optional chaining in contexts where the undefined value
-	 * is not allowed.
+     * is not allowed.
      * https://eslint.org/docs/rules/no-unsafe-optional-chaining
      * Type: problem
      * Recommended: Yes
@@ -2180,7 +2180,7 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-param-description.md
      * Recommended: true
      */
-    'jsdoc/require-param-description': WARN,
+    'jsdoc/require-param-description': OFF,
 
     /*
      * Requires that all function parameters have names.
@@ -2209,7 +2209,7 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-property-description.md
      * Recommended: true
      */
-    'jsdoc/require-property-description': WARN,
+    'jsdoc/require-property-description': OFF,
 
     /*
      * Requires that all function `@property` tags have names.
@@ -2246,7 +2246,7 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-returns-description.md
      * Recommended: true
      */
-    'jsdoc/require-returns-description': WARN,
+    'jsdoc/require-returns-description': OFF,
 
     /*
      * Requires that `@returns` tag has type value.
