@@ -7,6 +7,7 @@
 /* eslint-env node */
 
 const OFF = 'off';
+const WARN = 'warn';
 const ERROR = 'error';
 
 module.exports = Object.freeze({
@@ -34,7 +35,7 @@ module.exports = Object.freeze({
      * Type: suggestion
      */
     'sort-imports': [
-      ERROR,
+      WARN,
       {
         ignoreCase: false,
         ignoreDeclarationSort: true, // using eslint-plugin-import to handle this
@@ -78,45 +79,42 @@ module.exports = Object.freeze({
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/exports-last.md
      * Type: suggestion
      */
-    'import/exports-last': ERROR,
+    'import/exports-last': WARN,
 
     /*
      * Ensure consistent use of file extension within the import path.
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/extensions.md
      * Type: suggestion
      */
-    'import/extensions': [ERROR, 'ignorePackages'],
+    'import/extensions': [WARN, 'ignorePackages'],
 
     /*
      * Ensure all imports appear before other statements.
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/first.md
      * Type: suggestion
      */
-    'import/first': ERROR,
+    'import/first': WARN,
 
     /*
      * Enforce the maximum number of dependencies a module can have.
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/max-dependencies.md
      * Type: suggestion
      */
-    'import/max-dependencies': ERROR,
+    'import/max-dependencies': OFF,
 
     /*
      * Enforce a newline after import statements.
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/newline-after-import.md
      * Type: layout
      */
-    'import/newline-after-import': [ERROR, { considerComments: true }],
+    'import/newline-after-import': [WARN, { considerComments: true }],
 
     /*
      * Forbid anonymous values as default exports.
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-anonymous-default-export.md
      * Type: suggestion
      */
-    'import/no-anonymous-default-export': [
-      ERROR,
-      { allowCallExpression: false }
-    ],
+    'import/no-anonymous-default-export': WARN,
 
     /*
      * Forbid repeated import of the same module in multiple places.
@@ -124,24 +122,21 @@ module.exports = Object.freeze({
      * Type: problem
      * Recommended: true
      */
-    'import/no-duplicates': [
-      ERROR,
-      { considerQueryString: true, 'prefer-inline': true }
-    ],
+    'import/no-duplicates': WARN,
 
     /*
      * Forbid named default exports.
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-named-default.md
      * Type: suggestion
      */
-    'import/no-named-default': ERROR,
+    'import/no-named-default': WARN,
 
     /*
      * Forbid namespace (a.k.a. "wildcard" `*`) imports.
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-namespace.md
      * Type: suggestion
      */
-    'import/no-namespace': ERROR,
+    'import/no-namespace': WARN,
 
     /*
      * Enforce a convention in module import order.
@@ -149,7 +144,7 @@ module.exports = Object.freeze({
      * Type: suggestion
      */
     'import/order': [
-      ERROR,
+      WARN,
       {
         groups: [
           'builtin',
@@ -172,7 +167,7 @@ module.exports = Object.freeze({
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/prefer-default-export.md
      * Type: suggestion
      */
-    'import/prefer-default-export': ERROR,
+    'import/prefer-default-export': WARN,
 
     // #endregion import->Style guide
 
@@ -185,14 +180,14 @@ module.exports = Object.freeze({
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/consistent-function-scoping.md
      * Recommended: Yes
      */
-    'unicorn/consistent-function-scoping': ERROR,
+    'unicorn/consistent-function-scoping': WARN,
 
     /*
      * Require escape sequences to use uppercase values.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/escape-case.md
      * Recommended: Yes
      */
-    'unicorn/escape-case': ERROR,
+    'unicorn/escape-case': WARN,
 
     /*
      * Enforce a case style for filenames.
@@ -200,7 +195,7 @@ module.exports = Object.freeze({
      * Recommended: Yes
      */
     'unicorn/filename-case': [
-      ERROR,
+      WARN,
       {
         cases: {
           kebabCase: true,
@@ -215,14 +210,14 @@ module.exports = Object.freeze({
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-console-spaces.md
      * Recommended: Yes
      */
-    'unicorn/no-console-spaces': ERROR,
+    'unicorn/no-console-spaces': WARN,
 
     /*
      * Enforce the style of numeric separators by correctly grouping digits.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/numeric-separators-style.md
      * Recommended: Yes
      */
-    'unicorn/numeric-separators-style': ERROR,
+    'unicorn/numeric-separators-style': WARN,
 
     /*
      * Prevent abbreviations.
@@ -230,7 +225,7 @@ module.exports = Object.freeze({
      * Recommended: Yes
      */
     'unicorn/prevent-abbreviations': [
-      ERROR,
+      WARN,
       {
         allowList: {
           args: true,
@@ -250,21 +245,21 @@ module.exports = Object.freeze({
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/switch-case-braces.md
      * Recommended: Yes
      */
-    'unicorn/switch-case-braces': ERROR,
+    'unicorn/switch-case-braces': WARN,
 
     /*
      * Fix whitespace-insensitive template indentation.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/template-indent.md
      * Recommended: Yes
      */
-    'unicorn/template-indent': ERROR,
+    'unicorn/template-indent': WARN,
 
     /*
      * Enforce consistent case for text encoding identifiers.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/text-encoding-identifier-case.md
      * Recommended: Yes
      */
-    'unicorn/text-encoding-identifier-case': ERROR,
+    'unicorn/text-encoding-identifier-case': WARN,
 
     // #endregion unicorn
 
@@ -288,20 +283,20 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc#multiline-blocks
      * Recommended: true
      */
-    'jsdoc/multiline-blocks': ERROR,
+    'jsdoc/multiline-blocks': WARN,
 
     /*
      * Prevents use of multiple asterisks at the beginning of lines.
      * https://github.com/gajus/eslint-plugin-jsdoc#no-multi-asterisks
      * Recommended: true
      */
-    'jsdoc/no-multi-asterisks': ERROR,
+    'jsdoc/no-multi-asterisks': WARN,
 
     /*
      * Requires that each JSDoc line starts with an `*`.
      * https://github.com/gajus/eslint-plugin-jsdoc#require-asterisk-prefix
      */
-    'jsdoc/require-asterisk-prefix': ERROR,
+    'jsdoc/require-asterisk-prefix': WARN,
 
     /*
      * Requires (or disallows) a hyphen before the `@param` description.
@@ -320,7 +315,7 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-tag-lines
      * Recommended: true
      */
-    'jsdoc/tag-lines': ERROR
+    'jsdoc/tag-lines': WARN
 
     // #endregion jsdoc
 

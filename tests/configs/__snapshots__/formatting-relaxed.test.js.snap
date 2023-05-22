@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`eslint-config-formatting should match the snapshot 1`] = `
+exports[`eslint-config-formatting-relaxed should match the snapshot 1`] = `
 {
   "env": {
     "es2022": true,
@@ -16,36 +16,25 @@ exports[`eslint-config-formatting should match the snapshot 1`] = `
   ],
   "reportUnusedDisableDirectives": true,
   "rules": {
-    "import/exports-last": "error",
+    "import/exports-last": "warn",
     "import/extensions": [
-      "error",
+      "warn",
       "ignorePackages",
     ],
-    "import/first": "error",
-    "import/max-dependencies": "error",
+    "import/first": "warn",
+    "import/max-dependencies": "off",
     "import/newline-after-import": [
-      "error",
+      "warn",
       {
         "considerComments": true,
       },
     ],
-    "import/no-anonymous-default-export": [
-      "error",
-      {
-        "allowCallExpression": false,
-      },
-    ],
-    "import/no-duplicates": [
-      "error",
-      {
-        "considerQueryString": true,
-        "prefer-inline": true,
-      },
-    ],
-    "import/no-named-default": "error",
-    "import/no-namespace": "error",
+    "import/no-anonymous-default-export": "warn",
+    "import/no-duplicates": "warn",
+    "import/no-named-default": "warn",
+    "import/no-namespace": "warn",
     "import/order": [
-      "error",
+      "warn",
       {
         "alphabetize": {
           "caseInsensitive": true,
@@ -65,17 +54,17 @@ exports[`eslint-config-formatting should match the snapshot 1`] = `
         "newlines-between": "always",
       },
     ],
-    "import/prefer-default-export": "error",
+    "import/prefer-default-export": "warn",
     "jsdoc/check-indentation": "error",
     "jsdoc/check-line-alignment": "error",
-    "jsdoc/multiline-blocks": "error",
-    "jsdoc/no-multi-asterisks": "error",
-    "jsdoc/require-asterisk-prefix": "error",
+    "jsdoc/multiline-blocks": "warn",
+    "jsdoc/no-multi-asterisks": "warn",
+    "jsdoc/require-asterisk-prefix": "warn",
     "jsdoc/require-hyphen-before-param-description": "off",
     "jsdoc/sort-tags": "off",
-    "jsdoc/tag-lines": "error",
+    "jsdoc/tag-lines": "warn",
     "sort-imports": [
-      "error",
+      "warn",
       {
         "allowSeparatedGroups": true,
         "ignoreCase": false,
@@ -98,10 +87,10 @@ exports[`eslint-config-formatting should match the snapshot 1`] = `
         },
       },
     ],
-    "unicorn/consistent-function-scoping": "error",
-    "unicorn/escape-case": "error",
+    "unicorn/consistent-function-scoping": "warn",
+    "unicorn/escape-case": "warn",
     "unicorn/filename-case": [
-      "error",
+      "warn",
       {
         "cases": {
           "camelCase": true,
@@ -110,10 +99,10 @@ exports[`eslint-config-formatting should match the snapshot 1`] = `
         },
       },
     ],
-    "unicorn/no-console-spaces": "error",
-    "unicorn/numeric-separators-style": "error",
+    "unicorn/no-console-spaces": "warn",
+    "unicorn/numeric-separators-style": "warn",
     "unicorn/prevent-abbreviations": [
-      "error",
+      "warn",
       {
         "allowList": {
           "Props": true,
@@ -130,9 +119,9 @@ exports[`eslint-config-formatting should match the snapshot 1`] = `
         ],
       },
     ],
-    "unicorn/switch-case-braces": "error",
-    "unicorn/template-indent": "error",
-    "unicorn/text-encoding-identifier-case": "error",
+    "unicorn/switch-case-braces": "warn",
+    "unicorn/template-indent": "warn",
+    "unicorn/text-encoding-identifier-case": "warn",
   },
 }
 `;

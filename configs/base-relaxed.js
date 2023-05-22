@@ -44,13 +44,7 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/array-callback-return
      * Type: problem
      */
-    'array-callback-return': [
-      ERROR,
-      {
-        allowImplicit: false,
-        checkForEach: true
-      }
-    ],
+    'array-callback-return': WARN,
 
     /*
      * Require `super()` calls in constructors
@@ -74,7 +68,7 @@ module.exports = Object.freeze({
      * Type: problem
      * Recommended: Yes
      */
-    'getter-return': [ERROR, { allowImplicit: false }],
+    'getter-return': ERROR,
 
     /*
      * Disallow using an async function as a Promise executor
@@ -89,7 +83,7 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-await-in-loop
      * Type: problem
      */
-    'no-await-in-loop': OFF,
+    'no-await-in-loop': WARN,
 
     /*
      * Disallow modifying variables of class declarations
@@ -113,7 +107,7 @@ module.exports = Object.freeze({
      * Type: problem
      * Recommended: Yes
      */
-    'no-cond-assign': [ERROR, 'always'],
+    'no-cond-assign': ERROR,
 
     /*
      * Disallow modifying variables that are declared using `const`
@@ -128,21 +122,21 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-constant-binary-expression
      * Type: problem
      */
-    'no-constant-binary-expression': ERROR,
+    'no-constant-binary-expression': WARN,
 
     /*
      * Disallow use of constant expressions in conditions
      * https://eslint.org/docs/rules/no-constant-condition
      * Type: problem
      */
-    'no-constant-condition': [ERROR, { checkLoops: false }],
+    'no-constant-condition': WARN,
 
     /*
      * Disallow returning value in constructor
      * https://eslint.org/docs/rules/no-constructor-return
      * Type: problem
      */
-    'no-constructor-return': ERROR,
+    'no-constructor-return': WARN,
 
     /*
      * Disallow control characters in regular expressions
@@ -205,7 +199,7 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-duplicate-imports
      * Type: problem
      */
-    // Override with https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md
+    // Enforced by https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md
     'no-duplicate-imports': OFF,
 
     /*
@@ -278,7 +272,7 @@ module.exports = Object.freeze({
      * Type: problem
      * Recommended: Yes
      */
-    'no-irregular-whitespace': [ERROR, { skipStrings: false }],
+    'no-irregular-whitespace': ERROR,
 
     /*
      * Disallow number literals that lose precision
@@ -302,7 +296,7 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/latest/rules/no-new-native-nonconstructor
      * Type: problem
      */
-    'no-new-native-nonconstructor': ERROR,
+    'no-new-native-nonconstructor': WARN,
 
     /*
      * Disallow symbol constructor
@@ -326,7 +320,7 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-promise-executor-return
      * Type: problem
      */
-    'no-promise-executor-return': ERROR,
+    'no-promise-executor-return': WARN,
 
     /*
      * Disallow calling some `Object.prototype` methods directly on objects
@@ -342,14 +336,14 @@ module.exports = Object.freeze({
      * Type: problem
      * Recommended: Yes
      */
-    'no-self-assign': [ERROR, { props: true }],
+    'no-self-assign': ERROR,
 
     /*
      * Disallow comparisons where both sides are exactly the same
      * https://eslint.org/docs/rules/no-self-compare
      * Type: problem
      */
-    'no-self-compare': ERROR,
+    'no-self-compare': WARN,
 
     /*
      * Disallow returning values from setters
@@ -372,7 +366,7 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-template-curly-in-string
      * Type: problem
      */
-    'no-template-curly-in-string': ERROR,
+    'no-template-curly-in-string': WARN,
 
     /*
      * Disallow to use `this`/`super` before `super()` calling in constructors.
@@ -389,7 +383,7 @@ module.exports = Object.freeze({
      * Type: problem
      * Recommended: Yes
      */
-    'no-undef': [ERROR, { typeof: true }],
+    'no-undef': ERROR,
 
     /*
      * Avoid code that looks like two expressions but is actually one
@@ -406,10 +400,11 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-unmodified-loop-condition
      * Type: problem
      */
-    'no-unmodified-loop-condition': ERROR,
+    'no-unmodified-loop-condition': WARN,
 
     /*
-     * Disallow unreachable statements after a return, throw, continue, or break statement
+     * Disallow unreachable statements after a return, throw, continue, or break
+	 * statement.
      * https://eslint.org/docs/rules/no-unreachable
      * Type: problem
      * Recommended: Yes
@@ -437,25 +432,23 @@ module.exports = Object.freeze({
      * Type: problem
      * Recommended: Yes
      */
-    'no-unsafe-negation': [ERROR, { enforceForOrderingRelations: true }],
+    'no-unsafe-negation': ERROR,
 
     /*
-     * Disallow use of optional chaining in contexts where the undefined value is not allowed
+     * Disallow use of optional chaining in contexts where the undefined value
+	 * is not allowed.
      * https://eslint.org/docs/rules/no-unsafe-optional-chaining
      * Type: problem
      * Recommended: Yes
      */
-    'no-unsafe-optional-chaining': [
-      ERROR,
-      { disallowArithmeticOperators: true }
-    ],
+    'no-unsafe-optional-chaining': ERROR,
 
     /*
      * Disallow Unused Private Class Members
      * https://eslint.org/docs/rules/no-unused-private-class-members
      * Type: problem
      */
-    'no-unused-private-class-members': ERROR,
+    'no-unused-private-class-members': WARN,
 
     /*
      * Disallow declaration of variables that are not used in the code
@@ -463,31 +456,14 @@ module.exports = Object.freeze({
      * Type: problem
      * Recommended: Yes
      */
-    'no-unused-vars': [
-      ERROR,
-      {
-        args: 'after-used',
-        argsIgnorePattern: '^ignore$',
-        caughtErrors: 'all',
-        vars: 'all',
-        varsIgnorePattern: '^ignore$'
-      }
-    ],
+    'no-unused-vars': ERROR,
 
     /*
      * Disallow use of variables before they are defined
      * https://eslint.org/docs/rules/no-use-before-define
      * Type: problem
      */
-    'no-use-before-define': [
-      ERROR,
-      {
-        classes: true,
-        functions: true,
-        variables: true,
-        allowNamedExports: false
-      }
-    ],
+    'no-use-before-define': WARN,
 
     /*
      * Disallow useless backreferences in regular expressions
@@ -504,7 +480,7 @@ module.exports = Object.freeze({
      * Note: Rule is very buggy
      * Type: problem
      */
-    'require-atomic-updates': WARN,
+    'require-atomic-updates': OFF,
 
     /*
      * Disallow comparisons with the value `NaN`
@@ -512,10 +488,7 @@ module.exports = Object.freeze({
      * Type: problem
      * Recommended: Yes
      */
-    'use-isnan': [
-      ERROR,
-      { enforceForSwitchCase: true, enforceForIndexOf: true }
-    ],
+    'use-isnan': ERROR,
 
     /*
      * Enforce comparing `typeof` expressions against valid strings
@@ -523,7 +496,7 @@ module.exports = Object.freeze({
      * Type: problem
      * Recommended: Yes
      */
-    'valid-typeof': [ERROR, { requireStringLiterals: true }],
+    'valid-typeof': ERROR,
 
     // #endregion Possible Problems
 
@@ -534,21 +507,14 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/accessor-pairs
      * Type: suggestion
      */
-    'accessor-pairs': [
-      ERROR,
-      {
-        setWithoutGet: true,
-        getWithoutSet: false,
-        enforceForClassMembers: true
-      }
-    ],
+    'accessor-pairs': OFF,
 
     /*
      * Require return statements to either always or never specify values
      * https://eslint.org/docs/rules/consistent-return
      * Type: suggestion
      */
-    'consistent-return': ERROR,
+    'consistent-return': OFF,
 
     /*
      * Specify curly brace conventions for all control statements
@@ -556,71 +522,63 @@ module.exports = Object.freeze({
      * Type: suggestion
      * See: https://github.com/prettier/eslint-config-prettier/blob/main/README.md#curly
      */
-    curly: [ERROR, 'all'],
+    curly: OFF,
 
     /*
      * encourages use of dot notation whenever possible
      * https://eslint.org/docs/rules/dot-notation
      * Type: suggestion
      */
-    'dot-notation': [ERROR, { allowKeywords: true }],
+    'dot-notation': OFF,
 
     /*
      * Require the use of `===` and `!==`
      * https://eslint.org/docs/rules/eqeqeq
      * Type: suggestion
      */
-    eqeqeq: [ERROR, 'always', { null: 'ignore' }],
+    eqeqeq: OFF,
 
     /*
      * Enforce default clauses in switch statements to be last
      * https://eslint.org/docs/rules/default-case-last
      * Type: suggestion
      */
-    'default-case-last': ERROR,
+    'default-case-last': OFF,
 
     /*
      * Require grouped accessor pairs in object literals and classes
      * https://eslint.org/docs/rules/grouped-accessor-pairs
      * Type: suggestion
      */
-    'grouped-accessor-pairs': [ERROR, 'getBeforeSet'],
+    'grouped-accessor-pairs': OFF,
 
     /*
      * Require a capital letter for constructors
      * https://eslint.org/docs/rules/new-cap
      * Type: suggestion
      */
-    'new-cap': [
-      ERROR,
-      {
-        newIsCap: true,
-        newIsCapExceptions: [],
-        capIsNew: false,
-        capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List']
-      }
-    ],
+    'new-cap': OFF,
 
     /*
      * Disallow the use of alert, confirm, and prompt
      * https://eslint.org/docs/rules/no-alert
      * Type: suggestion
      */
-    'no-alert': ERROR,
+    'no-alert': OFF,
 
     /*
      * Disallow `Array` constructors
      * https://eslint.org/docs/rules/no-array-constructor
      * Type: suggestion
      */
-    'no-array-constructor': ERROR,
+    'no-array-constructor': OFF,
 
     /*
      * Disallow use of `arguments.caller` or `arguments.callee`
      * https://eslint.org/docs/rules/no-caller
      * Type: suggestion
      */
-    'no-caller': ERROR,
+    'no-caller': OFF,
 
     /*
      * Disallow lexical declarations in case/default clauses
@@ -636,14 +594,14 @@ module.exports = Object.freeze({
      * Type: suggestion
      * See: https://github.com/prettier/eslint-config-prettier/blob/main/README.md#no-confusing-arrow
      */
-    'no-confusing-arrow': [ERROR, { allowParens: false }],
+    'no-confusing-arrow': OFF,
 
     /*
      * Disallow use of console
      * https://eslint.org/docs/rules/no-console
      * Type: suggestion
      */
-    'no-console': WARN,
+    'no-console': OFF,
 
     /*
      * Disallow deletion of variables
@@ -658,7 +616,7 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-else-return
      * Type: suggestion
      */
-    'no-else-return': [ERROR, { allowElseIf: false }],
+    'no-else-return': OFF,
 
     /*
      * Disallow empty statements
@@ -680,14 +638,14 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-extend-native
      * Type: suggestion
      */
-    'no-extend-native': ERROR,
+    'no-extend-native': OFF,
 
     /*
      * Disallow unnecessary function binding
      * https://eslint.org/docs/rules/no-extra-bind
      * Type: suggestion
      */
-    'no-extra-bind': ERROR,
+    'no-extra-bind': OFF,
 
     /*
      * Disallow double-negation boolean casts in a boolean context
@@ -695,14 +653,14 @@ module.exports = Object.freeze({
      * Type: suggestion
      * Recommended: Yes
      */
-    'no-extra-boolean-cast': [ERROR, { enforceForLogicalOperands: true }],
+    'no-extra-boolean-cast': ERROR,
 
     /*
      * Disallow unnecessary labels
      * https://eslint.org/docs/rules/no-extra-label
      * Type: suggestion
      */
-    'no-extra-label': ERROR,
+    'no-extra-label': OFF,
 
     /*
      * Disallow unnecessary semicolons
@@ -718,7 +676,7 @@ module.exports = Object.freeze({
      * Type: suggestion
      * Recommended: Yes
      */
-    'no-global-assign': [ERROR, { exceptions: [] }],
+    'no-global-assign': ERROR,
 
     /*
      * Disallow use of `eval()`-like methods
@@ -732,42 +690,42 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-iterator
      * Type: suggestion
      */
-    'no-iterator': ERROR,
+    'no-iterator': OFF,
 
     /*
      * Disallow labels that share a name with a variable
      * https://eslint.org/docs/rules/no-label-var
      * Type: suggestion
      */
-    'no-label-var': ERROR,
+    'no-label-var': OFF,
 
     /*
      * Disallow use of labels for anything other than loops and switches
      * https://eslint.org/docs/rules/no-labels
      * Type: suggestion
      */
-    'no-labels': [ERROR, { allowLoop: false, allowSwitch: false }],
+    'no-labels': OFF,
 
     /*
      * Disallow unnecessary nested blocks
      * https://eslint.org/docs/rules/no-lone-blocks
      * Type: suggestion
      */
-    'no-lone-blocks': ERROR,
+    'no-lone-blocks': OFF,
 
     /*
      * Disallow `if` as the only statement in an `else` block
      * https://eslint.org/docs/rules/no-lonely-if
      * Type: suggestion
      */
-    'no-lonely-if': ERROR,
+    'no-lonely-if': OFF,
 
     /*
      * Disallow creation of functions within loops
      * https://eslint.org/docs/rules/no-loop-func
      * Type: suggestion
      */
-    'no-loop-func': ERROR,
+    'no-loop-func': OFF,
 
     /*
      * Disallow mixed binary operators
@@ -775,7 +733,7 @@ module.exports = Object.freeze({
      * Type: suggestion
      */
     'no-mixed-operators': [
-      ERROR,
+      WARN,
       {
         groups: [
           ['%', '**'],
@@ -797,42 +755,42 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-multi-str
      * Type: suggestion
      */
-    'no-multi-str': ERROR,
+    'no-multi-str': OFF,
 
     /*
      * Disallow nested ternary expressions
      * https://eslint.org/docs/rules/no-nested-ternary
      * Type: suggestion
      */
-    'no-nested-ternary': ERROR,
+    'no-nested-ternary': OFF,
 
     /*
      * Disallow use of new operator when not part of the assignment or comparison
      * https://eslint.org/docs/rules/no-new
      * Type: suggestion
      */
-    'no-new': ERROR,
+    'no-new': OFF,
 
     /*
      * Disallow `new` operators with the `Function` object
      * https://eslint.org/docs/rules/no-new-func
      * Type: suggestion
      */
-    'no-new-func': ERROR,
+    'no-new-func': OFF,
 
     /*
      * Disallow `Object` constructors
      * https://eslint.org/docs/latest/rules/no-new-object
      * Type: suggestion
      */
-    'no-new-object': ERROR,
+    'no-new-object': OFF,
 
     /*
      * Disallows creating new instances of `String`, `Number`, and `Boolean`
      * https://eslint.org/docs/rules/no-new-wrappers
      * Type: suggestion
      */
-    'no-new-wrappers': ERROR,
+    'no-new-wrappers': OFF,
 
     /*
      * Disallow `\8` and `\9` escape sequences in string literals
@@ -855,14 +813,14 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-octal-escape
      * Type: suggestion
      */
-    'no-octal-escape': ERROR,
+    'no-octal-escape': OFF,
 
     /*
      * Disallow usage of `__proto__` property
      * https://eslint.org/docs/rules/no-proto
      * Type: suggestion
      */
-    'no-proto': ERROR,
+    'no-proto': OFF,
 
     /*
      * Disallow declaring the same variable more than once
@@ -885,12 +843,7 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-restricted-exports
      * Type: suggestion
      */
-    'no-restricted-exports': [
-      ERROR,
-      {
-        restrictedNamedExports: ['default', 'then']
-      }
-    ],
+    'no-restricted-exports': OFF,
 
     /*
      * Disallow specific globals
@@ -899,7 +852,7 @@ module.exports = Object.freeze({
      * Type: suggestion
      */
     'no-restricted-globals': [
-      ERROR,
+      WARN,
       {
         name: 'isFinite',
         message:
@@ -918,7 +871,7 @@ module.exports = Object.freeze({
      * Type: suggestion
      */
     'no-restricted-syntax': [
-      ERROR,
+      WARN,
       {
         selector:
           "BinaryExpression[operator='instanceof'][right.name='Object']",
@@ -938,29 +891,21 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-script-url
      * Type: suggestion
      */
-    'no-script-url': ERROR,
+    'no-script-url': OFF,
 
     /*
      * Disallow use of comma operator
      * https://eslint.org/docs/rules/no-sequences
      * Type: suggestion
      */
-    'no-sequences': [ERROR, { allowInParentheses: false }],
+    'no-sequences': OFF,
 
     /*
      * Disallow declaration of variables already declared in the outer scope
      * https://eslint.org/docs/rules/no-shadow
      * Type: suggestion
      */
-    'no-shadow': [
-      ERROR,
-      {
-        builtinGlobals: true,
-        hoist: 'functions',
-        allow: ['defaultStatus', 'event', 'find', 'length', 'name', 'status'],
-        ignoreOnInitialization: false
-      }
-    ],
+    'no-shadow': OFF,
 
     /*
      * Disallow shadowing of names such as arguments
@@ -975,36 +920,28 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-throw-literal
      * Type: suggestion
      */
-    'no-throw-literal': ERROR,
+    'no-throw-literal': OFF,
 
     /*
      * Disallow use of `undefined` when initializing variables
      * https://eslint.org/docs/rules/no-undef-init
      * Type: suggestion
      */
-    'no-undef-init': ERROR,
+    'no-undef-init': OFF,
 
     /*
      * Disallow ternary operators when simpler alternatives exist
      * https://eslint.org/docs/rules/no-unneeded-ternary
      * Type: suggestion
      */
-    'no-unneeded-ternary': [ERROR, { defaultAssignment: false }],
+    'no-unneeded-ternary': OFF,
 
     /*
      * Disallow usage of expressions in statement position
      * https://eslint.org/docs/rules/no-unused-expressions
      * Type: suggestion
      */
-    'no-unused-expressions': [
-      ERROR,
-      {
-        allowShortCircuit: false,
-        allowTaggedTemplates: false,
-        allowTernary: false,
-        enforceForJSX: true
-      }
-    ],
+    'no-unused-expressions': OFF,
 
     /*
      * Disallow unused labels
@@ -1019,7 +956,7 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-useless-call
      * Type: suggestion
      */
-    'no-useless-call': ERROR,
+    'no-useless-call': OFF,
 
     /*
      * Disallow unnecessary catch clauses
@@ -1034,21 +971,21 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-useless-computed-key
      * Type: suggestion
      */
-    'no-useless-computed-key': ERROR,
+    'no-useless-computed-key': OFF,
 
     /*
      * Disallow useless string concatenation
      * https://eslint.org/docs/rules/no-useless-concat
      * Type: suggestion
      */
-    'no-useless-concat': ERROR,
+    'no-useless-concat': OFF,
 
     /*
      * Disallow unnecessary constructor
      * https://eslint.org/docs/rules/no-useless-constructor
      * Type: suggestion
      */
-    'no-useless-constructor': ERROR,
+    'no-useless-constructor': OFF,
 
     /*
      * Disallow unnecessary string escaping
@@ -1064,28 +1001,21 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/no-useless-rename
      * Type: suggestion
      */
-    'no-useless-rename': [
-      ERROR,
-      {
-        ignoreDestructuring: false,
-        ignoreImport: false,
-        ignoreExport: false
-      }
-    ],
+    'no-useless-rename': OFF,
 
     /*
      * Disallow redundant `return;` statements
      * https://eslint.org/docs/rules/no-useless-return
      * Type: suggestion
      */
-    'no-useless-return': ERROR,
+    'no-useless-return': OFF,
 
     /*
      * Require `let` or `const` instead of `var`
      * https://eslint.org/docs/rules/no-var
      * Type: suggestion
      */
-    'no-var': ERROR,
+    'no-var': OFF,
 
     /*
      * Disallow use of the with statement
@@ -1100,118 +1030,91 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/object-shorthand
      * Type: suggestion
      */
-    'object-shorthand': ERROR,
+    'object-shorthand': OFF,
 
     /*
      * Require or disallow assignment operator shorthand where possible
      * https://eslint.org/docs/rules/operator-assignment
      * Type: suggestion
      */
-    'operator-assignment': [ERROR, 'always'],
+    'operator-assignment': OFF,
 
     /*
      * Require using arrow functions for callbacks
      * https://eslint.org/docs/rules/prefer-arrow-callback
      * Type: suggestion
      */
-    'prefer-arrow-callback': [
-      ERROR,
-      {
-        allowNamedFunctions: false,
-        allowUnboundThis: true
-      }
-    ],
+    'prefer-arrow-callback': OFF,
 
     /*
      * Require `const` declarations for variables that are never reassigned
      * after declared.
      * https://eslint.org/docs/rules/prefer-const
      */
-    'prefer-const': [
-      ERROR,
-      {
-        destructuring: 'any',
-        ignoreReadBeforeAssign: true
-      }
-    ],
+    'prefer-const': OFF,
 
     /*
      * Prefer destructuring from arrays and objects
      * https://eslint.org/docs/rules/prefer-destructuring
      * Type: suggestion
      */
-    'prefer-destructuring': [
-      ERROR,
-      {
-        AssignmentExpression: {
-          array: true,
-          object: false
-        },
-        VariableDeclarator: {
-          array: false,
-          object: true
-        }
-      },
-      {
-        enforceForRenamedProperties: false
-      }
-    ],
+    'prefer-destructuring': OFF,
 
     /*
      * Disallow the use of `Math.pow` in favor of the `**` operator
      * https://eslint.org/docs/rules/prefer-exponentiation-operator
      * Type: suggestion
      */
-    'prefer-exponentiation-operator': ERROR,
+    'prefer-exponentiation-operator': WARN,
 
     /*
      * Disallow `parseInt()` in favor of binary, octal, and hexadecimal literals
      * https://eslint.org/docs/rules/prefer-numeric-literals
      * Type: suggestion
      */
-    'prefer-numeric-literals': ERROR,
+    'prefer-numeric-literals': WARN,
 
     /*
      * Prefer use of an object spread over `Object.assign`
      * https://eslint.org/docs/rules/prefer-object-spread
      * Type: suggestion
      */
-    'prefer-object-spread': ERROR,
+    'prefer-object-spread': OFF,
 
     /*
      * Require using `Error` objects as Promise rejection reasons
      * https://eslint.org/docs/rules/prefer-promise-reject-errors
      * Type: suggestion
      */
-    'prefer-promise-reject-errors': [ERROR, { allowEmptyReject: false }],
+    'prefer-promise-reject-errors': OFF,
 
     /*
      * Disallow use of the RegExp constructor in favor of regular expression literals
      * https://eslint.org/docs/rules/prefer-regex-literals
      * Type: suggestion
      */
-    'prefer-regex-literals': [ERROR, { disallowRedundantWrapping: true }],
+    'prefer-regex-literals': OFF,
 
     /*
      * Require rest parameters instead of `arguments`
      * https://eslint.org/docs/rules/prefer-rest-params
      * Type: suggestion
      */
-    'prefer-rest-params': ERROR,
+    'prefer-rest-params': OFF,
 
     /*
      * Require spread operators instead of `.apply()`
      * https://eslint.org/docs/rules/prefer-spread
      * Type: suggestion
      */
-    'prefer-spread': ERROR,
+    'prefer-spread': OFF,
 
     /*
      * Require template literals instead of string concatenation
      * https://eslint.org/docs/rules/prefer-template
      * Type: suggestion
      */
-    'prefer-template': ERROR,
+    'prefer-template': OFF,
 
     /*
      * Disallow generator functions that do not have yield
@@ -1226,14 +1129,14 @@ module.exports = Object.freeze({
      * https://eslint.org/docs/rules/strict
      * Type: suggestion
      */
-    strict: [ERROR, 'safe'],
+    strict: OFF,
 
     /*
      * Require or disallow Yoda conditions
      * https://eslint.org/docs/rules/yoda
      * Type: suggestion
      */
-    yoda: [ERROR, 'never', { onlyEquality: true }],
+    yoda: OFF,
 
     // #endregion Suggestions
 
@@ -1261,7 +1164,7 @@ module.exports = Object.freeze({
      * Type: problem
      */
     '@getify/proper-arrows/params': [
-      ERROR,
+      WARN,
       {
         unused: 'trailing',
         count: 2,
@@ -1275,28 +1178,28 @@ module.exports = Object.freeze({
      * https://github.com/getify/eslint-plugin-proper-arrows/#rule-name
      * Type: problem
      */
-    '@getify/proper-arrows/name': ERROR,
+    '@getify/proper-arrows/name': WARN,
 
     /*
      * Control various aspects of arrow function returns to keep them readable
      * https://github.com/getify/eslint-plugin-proper-arrows/#rule-return
      * Type: problem
      */
-    '@getify/proper-arrows/return': [ERROR, { ternary: 1 }],
+    '@getify/proper-arrows/return': [WARN, { ternary: 1 }],
 
     /*
      * Forbid arrow functions from various locations
      * https://github.com/getify/eslint-plugin-proper-arrows/#rule-where
      * Type: problem
      */
-    '@getify/proper-arrows/where': ERROR,
+    '@getify/proper-arrows/where': OFF,
 
     /*
      * Require arrow functions to reference the 'this' keyword
      * https://github.com/getify/eslint-plugin-proper-arrows/#rule-this
      * Type: problem
      */
-    '@getify/proper-arrows/this': [ERROR, 'nested', { 'no-global': true }],
+    '@getify/proper-arrows/this': OFF,
 
     // #endregion @getify/proper-arrows
 
@@ -1307,7 +1210,7 @@ module.exports = Object.freeze({
      * https://github.com/getify/eslint-plugin-proper-ternary/#rule-nested
      * Type: problem
      */
-    '@getify/proper-ternary/nested': [ERROR, { else: true, depth: 10 }],
+    '@getify/proper-ternary/nested': [WARN, { else: true, depth: 10 }],
 
     /*
      * Requires surrounding `( .. )` parentheses around specific kinds of
@@ -1316,7 +1219,7 @@ module.exports = Object.freeze({
      * Type: problem
      */
     '@getify/proper-ternary/parens': [
-      ERROR,
+      WARN,
       { ternary: false, call: false, object: false }
     ],
 
@@ -1327,7 +1230,7 @@ module.exports = Object.freeze({
      * https://github.com/getify/eslint-plugin-proper-ternary/#rule-where
      * Type: problem
      */
-    '@getify/proper-ternary/where': [ERROR, { return: false }],
+    '@getify/proper-ternary/where': OFF,
 
     // #endregion @getify/proper-ternary
 
@@ -1359,21 +1262,21 @@ module.exports = Object.freeze({
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-deprecated.md
      * Type: suggestion
      */
-    'import/no-deprecated': ERROR,
+    'import/no-deprecated': WARN,
 
     /*
      * Forbid empty named import blocks.
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-empty-named-blocks.md
      * Type: suggestion
      */
-    'import/no-empty-named-blocks': ERROR,
+    'import/no-empty-named-blocks': WARN,
 
     /*
      * Forbid the use of mutable exports with `var` or `let`.
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-mutable-exports.md
      * Type: suggestion
      */
-    'import/no-mutable-exports': ERROR,
+    'import/no-mutable-exports': WARN,
 
     /*
      * Forbid use of exported name as identifier of default export.
@@ -1397,10 +1300,7 @@ module.exports = Object.freeze({
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unused-modules.md
      * Type: suggestion
      */
-    'import/no-unused-modules': [
-      ERROR,
-      { missingExports: false, unusedExports: true }
-    ],
+    'import/no-unused-modules': OFF,
 
     // #endregion import->Helpful warnings
 
@@ -1436,7 +1336,7 @@ module.exports = Object.freeze({
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-absolute-path.md
      * Type: suggestion
      */
-    'import/no-absolute-path': ERROR,
+    'import/no-absolute-path': OFF,
 
     /*
      * Forbid a module from importing a module with a dependency path back to
@@ -1444,28 +1344,28 @@ module.exports = Object.freeze({
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-cycle.md
      * Type: suggestion
      */
-    'import/no-cycle': [ERROR, { commonjs: true }],
+    'import/no-cycle': OFF,
 
     /*
      * Forbid `require()` calls with expressions.
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-dynamic-require.md
      * Type: suggestion
      */
-    'import/no-dynamic-require': [ERROR, { esmodule: true }],
+    'import/no-dynamic-require': OFF,
 
     /*
      * Forbid importing packages through relative paths.
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-relative-packages.md
      * Type: suggestion
      */
-    'import/no-relative-packages': ERROR,
+    'import/no-relative-packages': OFF,
 
     /*
      * Forbid a module from importing itself.
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-self-import.md
      * Type: problem
      */
-    'import/no-self-import': ERROR,
+    'import/no-self-import': OFF,
 
     /*
      * Ensure imports point to a file/module that can be resolved.
@@ -1473,24 +1373,21 @@ module.exports = Object.freeze({
      * Type: problem
      * Recommended: true
      */
-    'import/no-unresolved': [
-      ERROR,
-      { commonjs: true, caseSensitiveStrict: true }
-    ],
+    'import/no-unresolved': ERROR,
 
     /*
      * Forbid unnecessary path segments in import and require statements.
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-useless-path-segments.md
-     * Type:
+     * Type: suggestion
      */
-    'import/no-useless-path-segments': [ERROR, { commonjs: true }],
+    'import/no-useless-path-segments': OFF,
 
     /*
      * Forbid webpack loader syntax in imports.
      * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-webpack-loader-syntax.md
-     * Type:
+     * Type: problem
      */
-    'import/no-webpack-loader-syntax': ERROR,
+    'import/no-webpack-loader-syntax': OFF,
 
     // #endregion import->Static analysis
 
@@ -1718,13 +1615,13 @@ module.exports = Object.freeze({
      * Disallow unsafe regular expressions.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unsafe-regex.md
      */
-    'unicorn/no-unsafe-regex': ERROR,
+    'unicorn/no-unsafe-regex': WARN,
 
     /*
      * Disallow unused object properties.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unused-properties.md
      */
-    'unicorn/no-unused-properties': ERROR,
+    'unicorn/no-unused-properties': OFF,
 
     /*
      * Disallow useless fallback when spreading in object literals.
@@ -1752,7 +1649,6 @@ module.exports = Object.freeze({
      * Disallow unnecessary spread.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-spread.md
      * Recommended: Yes
-     * Used by Mozilla
      */
     'unicorn/no-useless-spread': ERROR,
 
@@ -1768,7 +1664,7 @@ module.exports = Object.freeze({
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-undefined.md
      * Recommended: Yes
      */
-    'unicorn/no-useless-undefined': OFF,
+    'unicorn/no-useless-undefined': ERROR,
 
     /*
      * Disallow number literals with zero fractions or dangling dots.
@@ -1783,22 +1679,21 @@ module.exports = Object.freeze({
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-find.md
      * Recommended: Yes
      */
-    'unicorn/prefer-array-find': ['error', { checkFromLast: true }],
+    'unicorn/prefer-array-find': WARN,
 
     /*
      * Prefer `Array#flat()` over legacy techniques to flatten arrays.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat.md
      * Recommended: Yes
-     * Used by Mozilla
      */
-    'unicorn/prefer-array-flat': ERROR,
+    'unicorn/prefer-array-flat': WARN,
 
     /*
      * Prefer `.flatMap(…)` over `.map(…).flat()`.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat-map.md
      * Recommended: Yes
      */
-    'unicorn/prefer-array-flat-map': ERROR,
+    'unicorn/prefer-array-flat-map': WARN,
 
     /*
      * Prefer `Array#{indexOf,lastIndexOf}()` over
@@ -1806,14 +1701,14 @@ module.exports = Object.freeze({
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-index-of.md
      * Recommended: Yes
      */
-    'unicorn/prefer-array-index-of': ERROR,
+    'unicorn/prefer-array-index-of': WARN,
 
     /*
      * Prefer `.some(…)` over `.filter(…).length` check and `.{find,findLast}(…)`.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-some.md
      * Recommended: Yes
      */
-    'unicorn/prefer-array-some': ERROR,
+    'unicorn/prefer-array-some': WARN,
 
     /*
      * Prefer `.at()` method for index access and `String#charAt()`.
@@ -1827,28 +1722,28 @@ module.exports = Object.freeze({
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-code-point.md
      * Recommended: Yes
      */
-    'unicorn/prefer-code-point': ERROR,
+    'unicorn/prefer-code-point': WARN,
 
     /*
      * Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-date-now.md
      * Recommended: Yes
      */
-    'unicorn/prefer-date-now': ERROR,
+    'unicorn/prefer-date-now': WARN,
 
     /*
      * Prefer default parameters over reassignment.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-default-parameters.md
      * Recommended: Yes
      */
-    'unicorn/prefer-default-parameters': ERROR,
+    'unicorn/prefer-default-parameters': WARN,
 
     /*
      * Prefer `export…from` when re-exporting.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-export-from.md
      * Recommended: Yes
      */
-    'unicorn/prefer-export-from': [ERROR, { ignoreUsedVariables: true }],
+    'unicorn/prefer-export-from': WARN,
 
     /*
      * Prefer `.includes()` over `.indexOf()` and `Array#some()` when checking
@@ -1856,14 +1751,14 @@ module.exports = Object.freeze({
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-includes.md
      * Recommended: Yes
      */
-    'unicorn/prefer-includes': ERROR,
+    'unicorn/prefer-includes': WARN,
 
     /*
      * Prefer using a logical operator over a ternary.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-logical-operator-over-ternary.md
      * Recommended: Yes
      */
-    'unicorn/prefer-logical-operator-over-ternary': ERROR,
+    'unicorn/prefer-logical-operator-over-ternary': WARN,
 
     /*
      * Enforce the use of `Math.trunc` instead of bitwise operators.
@@ -1877,7 +1772,7 @@ module.exports = Object.freeze({
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-math-apis.md
      * Recommended: Yes
      */
-    'unicorn/prefer-modern-math-apis': ERROR,
+    'unicorn/prefer-modern-math-apis': WARN,
 
     /*
      * Prefer JavaScript modules (ESM) over CommonJS.
@@ -1892,7 +1787,7 @@ module.exports = Object.freeze({
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-native-coercion-functions.md
      * Recommended: Yes
      */
-    'unicorn/prefer-native-coercion-functions': ERROR,
+    'unicorn/prefer-native-coercion-functions': WARN,
 
     /*
      * Prefer negative index over `.length - index` when possible.
@@ -1900,14 +1795,14 @@ module.exports = Object.freeze({
      * Recommended: Yes
      * Used by Mozilla
      */
-    'unicorn/prefer-negative-index': ERROR,
+    'unicorn/prefer-negative-index': WARN,
 
     /*
      * Prefer `Number` static properties over global ones.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-number-properties.md
      * Recommended: Yes
      */
-    'unicorn/prefer-number-properties': ERROR,
+    'unicorn/prefer-number-properties': WARN,
 
     /*
      * Prefer using `Object.fromEntries(…)` to transform a list of key-value
@@ -1916,7 +1811,7 @@ module.exports = Object.freeze({
      * Recommended: Yes
      */
     'unicorn/prefer-object-from-entries': [
-      ERROR,
+      WARN,
       {
         functions: ['fromPairs', 'R.fromPairs']
       }
@@ -1927,29 +1822,28 @@ module.exports = Object.freeze({
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-optional-catch-binding.md
      * Recommended: Yes
      */
-    'unicorn/prefer-optional-catch-binding': ERROR,
+    'unicorn/prefer-optional-catch-binding': WARN,
 
     /*
      * Prefer borrowing methods from the prototype instead of the instance.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-prototype-methods.md
      * Recommended: Yes
      */
-    'unicorn/prefer-prototype-methods': ERROR,
+    'unicorn/prefer-prototype-methods': WARN,
 
     /*
      * Prefer `Reflect.apply()` over `Function#apply()`.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-reflect-apply.md
      * Recommended: Yes
      */
-    'unicorn/prefer-reflect-apply': ERROR,
+    'unicorn/prefer-reflect-apply': WARN,
 
     /*
      * Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-regexp-test.md
      * Recommended: Yes
-     * Used by Mozilla
      */
-    'unicorn/prefer-regexp-test': ERROR,
+    'unicorn/prefer-regexp-test': WARN,
 
     /*
      * Prefer `Set#has()` over `Array#includes()` when checking for existence or
@@ -1957,14 +1851,14 @@ module.exports = Object.freeze({
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-has.md
      * Recommended: Yes
      */
-    'unicorn/prefer-set-has': OFF,
+    'unicorn/prefer-set-has': WARN,
 
     /*
      * Prefer using `Set#size` instead of `Array#length`.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-size.md
      * Recommended: Yes
      */
-    'unicorn/prefer-set-size': ERROR,
+    'unicorn/prefer-set-size': WARN,
 
     /*
      * Prefer the spread operator over `Array.from(…)`, `Array#concat(…)`,
@@ -1977,16 +1871,15 @@ module.exports = Object.freeze({
     /*
      * Prefer `String#replaceAll()` over regex searches with the global flag.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-replace-all.md
-     * Used by Mozilla
      */
-    'unicorn/prefer-string-replace-all': ERROR,
+    'unicorn/prefer-string-replace-all': WARN,
 
     /*
      * Prefer `String#slice()` over `String#substr()` and `String#substring()`.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-slice.md
      * Recommended: Yes
      */
-    'unicorn/prefer-string-slice': ERROR,
+    'unicorn/prefer-string-slice': WARN,
 
     /*
      * Prefer `String#startsWith()` & `String#endsWith()` over `RegExp#test()`.
@@ -1994,7 +1887,7 @@ module.exports = Object.freeze({
      * Recommended: Yes
      * Used by Mozilla
      */
-    'unicorn/prefer-string-starts-ends-with': ERROR,
+    'unicorn/prefer-string-starts-ends-with': WARN,
 
     /*
      * Prefer `String#trimStart()` / `String#trimEnd()` over
@@ -2002,28 +1895,28 @@ module.exports = Object.freeze({
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-trim-start-end.md
      * Recommended: Yes
      */
-    'unicorn/prefer-string-trim-start-end': ERROR,
+    'unicorn/prefer-string-trim-start-end': WARN,
 
     /*
      * Prefer `switch` over multiple `else-if`.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-switch.md
      * Recommended: Yes
      */
-    'unicorn/prefer-switch': ERROR,
+    'unicorn/prefer-switch': WARN,
 
     /*
      * Prefer ternary expressions over simple `if-else` statements.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-ternary.md
      * Recommended: Yes
      */
-    'unicorn/prefer-ternary': ERROR,
+    'unicorn/prefer-ternary': WARN,
 
     /*
      * Prefer top-level await over top-level promises and async function calls.
      * https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-top-level-await.md
      * Recommended: Yes
      */
-    'unicorn/prefer-top-level-await': ERROR,
+    'unicorn/prefer-top-level-await': WARN,
 
     /*
      * Enforce throwing `TypeError` in type checking conditions.
@@ -2069,7 +1962,7 @@ module.exports = Object.freeze({
      * https://github.com/levibuzolic/eslint-plugin-no-only-tests
      */
     'no-only-tests/no-only-tests': [
-      ERROR,
+      WARN,
       {
         block: [
           'And',
@@ -2154,14 +2047,14 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-types.md
      * Recommended: true
      */
-    'jsdoc/check-types': ERROR,
+    'jsdoc/check-types': WARN,
 
     /*
      * This rule checks the values for a handful of tags
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-values.md
      * Recommended: true
      */
-    'jsdoc/check-values': ERROR,
+    'jsdoc/check-values': WARN,
 
     /*
      * Expects tags that supposed to be empty of any content.
@@ -2175,7 +2068,7 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/implements-on-classes.md
      * Recommended: true
      */
-    'jsdoc/implements-on-classes': ERROR,
+    'jsdoc/implements-on-classes': WARN,
 
     /*
      * Reports on JSDoc texts that serve only to restart their attached name.
@@ -2197,7 +2090,7 @@ module.exports = Object.freeze({
      * at-sign (`@`) and some non-whitespace (as with a JSDoc block tag).
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/no-bad-blocks.md
      */
-    'jsdoc/no-bad-blocks': ERROR,
+    'jsdoc/no-bad-blocks': WARN,
 
     /*
      * If tags are present, this rule will prevent empty lines in the block
@@ -2237,7 +2130,7 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/no-undefined-types.md
      * Recommended: true
      */
-    'jsdoc/no-undefined-types': ERROR,
+    'jsdoc/no-undefined-types': WARN,
 
     /*
      * Requires that all functions have a description.
@@ -2273,14 +2166,14 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-jsdoc.md
      * Recommended: true
      */
-    'jsdoc/require-jsdoc': ERROR,
+    'jsdoc/require-jsdoc': WARN,
 
     /*
      * Requires that all function parameters are documented.
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-param.md
      * Recommended: true
      */
-    'jsdoc/require-param': ERROR,
+    'jsdoc/require-param': WARN,
 
     /*
      * Requires that each `@param` tag has a description value.
@@ -2294,14 +2187,14 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-param-name.md
      * Recommended: true
      */
-    'jsdoc/require-param-name': ERROR,
+    'jsdoc/require-param-name': WARN,
 
     /*
      * Requires that each `@param` tag has a `type` value.
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-param-type.md
      * Recommended: true
      */
-    'jsdoc/require-param-type': ERROR,
+    'jsdoc/require-param-type': WARN,
 
     /*
      * Requires that all `@typedef` and `@namespace` tags have `@property` when
@@ -2309,7 +2202,7 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-property.md
      * Recommended: true
      */
-    'jsdoc/require-property': ERROR,
+    'jsdoc/require-property': WARN,
 
     /*
      * Requires that each `@property` tag has a description value.
@@ -2323,21 +2216,21 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-property-name.md
      * Recommended: true
      */
-    'jsdoc/require-property-name': ERROR,
+    'jsdoc/require-property-name': WARN,
 
     /*
      * Requires that each `@property` tag has a type value.
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-property-type.md
      * Recommended: true
      */
-    'jsdoc/require-property-type': ERROR,
+    'jsdoc/require-property-type': WARN,
 
     /*
      * Requires that returns are documented.
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-returns.md
      * Recommended: true
      */
-    'jsdoc/require-returns': ERROR,
+    'jsdoc/require-returns': WARN,
 
     /*
      * Requires a return statement (or non-`undefined` Promise resolve value) in
@@ -2346,7 +2239,7 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-returns-check.md
      * Recommended: true
      */
-    'jsdoc/require-returns-check': ERROR,
+    'jsdoc/require-returns-check': WARN,
 
     /*
      * Requires that the `@returns` tag has a description value.
@@ -2360,7 +2253,7 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-returns-type.md
      * Recommended: true
      */
-    'jsdoc/require-returns-type': ERROR,
+    'jsdoc/require-returns-type': WARN,
 
     /*
      * Requires that throw statements are documented.
@@ -2373,7 +2266,7 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-yields.md
      * Recommended: true
      */
-    'jsdoc/require-yields': ERROR,
+    'jsdoc/require-yields': WARN,
 
     /*
      * Requires a yield statement in function body if a `@yields` tag is
@@ -2381,7 +2274,7 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-yields-check.md
      * Recommended: true
      */
-    'jsdoc/require-yields-check': ERROR,
+    'jsdoc/require-yields-check': WARN,
 
     /*
      * Requires all types to be valid JSDoc or Closure compiler types without
@@ -2389,7 +2282,7 @@ module.exports = Object.freeze({
      * https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/valid-types.md
      * Recommended: true
      */
-    'jsdoc/valid-types': ERROR
+    'jsdoc/valid-types': WARN
 
     // #endregion jsdoc
 

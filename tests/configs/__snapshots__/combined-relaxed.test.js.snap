@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`base config plus formatting 1`] = `
+exports[`relaxed base config plus formatting 1`] = `
 {
   "env": {
     "es2022": true,
